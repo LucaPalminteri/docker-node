@@ -12,5 +12,5 @@ docker build -t [name] .
 ```
 
 ```docker
-docker run -p [local]:[container] [ip-image]
+docker run -p [local]:[container] [id-image]
 ```

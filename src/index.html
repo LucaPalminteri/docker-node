@@ -17,7 +17,36 @@
         </nav>
     </header>
     <h1>home</h1>
+    <div id="root"></div>
     <footer>Luca Palminteri</footer>
+    <script>
+        let root = document.getElementById("root");
+
+        let innerHtml = '';
+        for (let i = 0; i < 20; i++) {
+            let card = document.createElement('div');
+
+            card.innerHTML = `
+            <div class='card'>
+                <header>
+                    Header
+                </header>
+                <main>
+                    Main
+                    <span>
+                        ${Math.floor(Math.random() * 100)}
+                    </span>
+                </main>
+                <footer>
+                    Footer
+                </footer>
+            <div>
+            `;
+
+            root.appendChild(card)
+        }
+
+    </script>
     <style>
 
         /*Global*/
@@ -46,6 +75,40 @@
         header nav ul li a {
             text-decoration: none;
             color: #ccc;
+        }
+
+        #root {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            box-shadow: 0 0 10px 8px #efefef;
+            margin: 10px;
+            width: 200px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .card header {
+            padding: 10px;
+            background-color: #ccc;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .card main {
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card footer {
+            padding: 10px;
+            background-color: #ccc;
+            border-radius: 0 0 20px 20px;
         }
     </style>
 </body>
