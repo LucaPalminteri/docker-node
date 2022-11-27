@@ -1,7 +1,7 @@
 const app = require('express')();
 
 app.get('/', (req, res ) => {
-    res.json({ id: 1,name:"Luca",message: 'Docker is easy 🐳' }) 
+    res.sendFile('./index.html', {root: __dirname })
 } 
 );
 
